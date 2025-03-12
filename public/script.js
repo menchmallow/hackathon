@@ -2,6 +2,9 @@ const input = document.getElementById("input");
 const generateBtn = document.getElementById("generate-btn");
 const responseContainer = document.getElementById("response");
 const loader = document.querySelector(".loader");
+const pdfBtn = document.getElementById("download-pdf");
+
+let response;
 
 async function generate() {
   if (input.value.trim().length === 0) {
@@ -23,6 +26,7 @@ async function generate() {
       loader.style.display = "none";
     }
     responseContainer.innerHTML = data.response;
+    response = data.response;
   } catch (err) {
     console.log(err);
   }
@@ -34,3 +38,7 @@ window.addEventListener("keydown", (e) => {
     generate();
   }
 });
+
+pdfBtn.onclick = () => {
+  html2pdf().from(response).save("summary.pdf");
+};
