@@ -1,5 +1,5 @@
 const input = document.getElementById("input");
-const generateBtn = document.getElementById("generate-btn");
+const summarizeBtn = document.getElementById("generate-btn");
 const responseContainer = document.getElementById("response");
 const loader = document.querySelector(".loader");
 const pdfBtn = document.getElementById("download-pdf");
@@ -14,6 +14,7 @@ async function generate() {
   }
   responseContainer.innerHTML = "";
   loader.style.display = "block";
+  pdfBtn.style.display = "none";
 
   try {
     const res = await fetch("/gemini-api", {
@@ -27,12 +28,13 @@ async function generate() {
     }
     responseContainer.innerHTML = data.response;
     response = data.response;
+    pdfBtn.style.display = "block";
   } catch (err) {
     console.log(err);
   }
 }
 
-generateBtn.onclick = generate;
+summarizeBtn.onclick = generate;
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     generate();

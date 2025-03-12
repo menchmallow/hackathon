@@ -21,7 +21,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction:
-    "This is an app for summarizing notes. Your role is to summarize the text or image that is given. Your response should be used for notes. Format your output appropriately.",
+    "This is an app for summarizing notes. Your role is to summarize the text that is given. Your response should be used for notes. Format your output appropriately.",
 });
 
 app.get("/", (req, res) => {
