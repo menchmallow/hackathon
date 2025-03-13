@@ -1,12 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 255, 108);
+}
+
+.gloria-hallelujah-regular {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 nav {
-  background-color: rgb(194, 194, 194);
-  padding: 1.5rem;
+  padding: 0.5rem;
+}
+
+.logo {
+  font-size: 1.5em;
+  margin-left: 2rem;
 }
 
 h1 {
@@ -19,14 +39,18 @@ h1 {
 
 #results {
   height: 60vh;
-  background-color: rgb(230, 230, 230);
   margin: 1rem 6rem;
-  border-radius: 5px;
   padding: 2rem;
+  border-radius: 5px;
+  font-size: 1.3rem;
   overflow-y: auto;
+  border: 0.2rem dashed black;
+  background: linear-gradient(white 90%, #ddd 90%);
+  background-size: 100% 1.2rem;
 }
 
 .input-container {
+  margin: 0 6rem;
   gap: 2rem;
 }
 
@@ -38,27 +62,43 @@ h1 {
 }
 
 #input {
-  font-size: 1.3rem;
-  width: 80%;
+  font-size: 1rem;
+  width: 100%;
   padding: 0.5rem;
-  height: 5vh;
+  height: 6vh;
+  border-radius: 5px;
   overflow-y: auto;
+  resize: none;
 }
 
 #generate-btn {
   font-size: 1.3rem;
-  padding: 0.5rem;
-}
-
-#download-pdf {
-  font-size: 1rem;
-  margin-left: 6.5rem;
-  margin-bottom: 1rem;
-  display: none;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #5667fd;
+  color: white;
 }
 
 #generate-btn:hover {
   cursor: pointer;
+  background-color: #2339ff;
+}
+
+#download-pdf {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+  display: none;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+#download-pdf:hover {
+  cursor: pointer;
+  background-color: #5667fd;
+  color: white;
 }
 
 .loader {
