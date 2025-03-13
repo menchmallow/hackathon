@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { createRequire } from "module";
 import { fileURLToPath } from "url";
+import "dotenv/config";
 
 const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
@@ -14,7 +15,7 @@ app.use(express.json());
 const MarkdownIt = require("markdown-it");
 const md = new MarkdownIt();
 
-const apiKey = "AIzaSyCmOCFd-sZa0QFyOWMH8LlEYqrW_xMLUbY";
+const apiKey = process.env.GOOGLE_API_KEY;
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(apiKey);
