@@ -6,20 +6,21 @@
 </head>
 <body>
   <nav>
-    <span class="gloria-hallelujah-regular logo">SumThing</span>
+    <span class="gloria-hallelujah-regular logo">SummarEase</span>
   </nav>
   <div class="main-container montserrat">
     <h1>Summarize notes</h1>
-    <div id="results">
-      <div class="loader"></div>
-      <div id="response"></div>
-    </div>
     <div class="input-container">
+      <textarea
+        id="input"
+        class="montserrat"
+        placeholder="Input your notes here..."
+      ></textarea>
+      <div id="result"></div>
+    </div>
+    <div class="btn-container">
+      <button id="generate-btn">Summarize</button>
       <button id="download-pdf">Save as PDF</button>
-      <div class="input-container2">
-        <textarea id="input" class="montserrat"></textarea>
-        <button id="generate-btn">Summarize</button>
-      </div>
     </div>
   </div>
   <script src="script.js"></script>

@@ -1,6 +1,6 @@
 const input = document.getElementById("input");
 const summarizeBtn = document.getElementById("generate-btn");
-const responseContainer = document.getElementById("response");
+const resultContainer = document.getElementById("result");
 const loader = document.querySelector(".loader");
 const pdfBtn = document.getElementById("download-pdf");
 
@@ -12,8 +12,8 @@ async function generate() {
     input.value = "";
     return;
   }
-  responseContainer.innerHTML = "";
-  loader.style.display = "block";
+
+  resultContainer.innerHTML = `<div class="loader"></div>`;
   pdfBtn.style.display = "none";
 
   try {
@@ -23,14 +23,13 @@ async function generate() {
       body: JSON.stringify({ prompt: input.value }),
     });
     const data = await res.json();
-    if (data) {
-      loader.style.display = "none";
-    }
-    responseContainer.innerHTML = data.response;
-    response = data.response;
+
+    resultContainer.innerHTML = data.response;
     pdfBtn.style.display = "block";
+    response = data.response;
   } catch (err) {
     console.log(err);
+    resultContainer.innerHTML = `<p>There seems to be a problem in loading a response</p>`;
   }
 }
 
